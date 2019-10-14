@@ -30,19 +30,17 @@ router.get('/runtime', (req, res) => {
 
 
 // css
-router.get('/common', (req, res) => {
-    axios.get('https://s.pinimg.com/webapp/style/common_desktop-3b101ffc8dbebcdaace1.css')
+const CSSRouter = express.Router();
+
+CSSRouter.get('*', (req, res) => {
+    axios.get(`https://s.pinimg.com/webapp/style${req.url}`)
         .then((result) => {
+            res.setHeader('Content-Type', 'text/css');
             res.send(result.data);
-        })
+        });
 });
 
-router.get('/gestalt', (req, res) => {
-    axios.get('https://s.pinimg.com/webapp/style/gestalt-1eb6cb5ea6b63c92bf18.css')
-        .then((result) => {
-            res.send(result.data);
-        })
-});
+app.use('/style', CSSRouter);
 
 const JSRouter = express.Router();
 
