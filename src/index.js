@@ -1,5 +1,7 @@
 const express = require('express');
 const axios = require('axios');
+const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const router = express.Router();
@@ -26,12 +28,6 @@ router.get('/runtime', (req, res) => {
         })
 });
 
-router.get('/article', (req, res) => {
-    axios.get('https://s.pinimg.com/webapp/js/pjs-ArticlePageDesktop~AuthHomePageDesktop~BusinessAccountConvertPageDesktop~BusinessAccountCreatePageDe~9a2b67e5-0eac34d47f72de853d49.js')
-        .then((result) => {
-            res.send(result.data);
-        });
-});
 
 // css
 router.get('/common', (req, res) => {
@@ -49,6 +45,13 @@ router.get('/gestalt', (req, res) => {
 });
 
 app.use(router);
+
+app.use((req, res) => {
+    fs.readFile(path.join(__dirname, './index.html'), 'utf-8', (err, data) => {
+        res.setHeader('Content-Type', 'text/html;charset=utf-8');
+        res.send(data);
+    });
+});
 
 app.listen(3001, () => {
     console.log('server started at port 3001');
