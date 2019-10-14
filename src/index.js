@@ -14,14 +14,14 @@ router.get('/index', (req, res) => {
 });
 
 // js
-router.get('/warm', (req, res) => {
-    axios.get('https://i.pinimg.com/assets/js/warm.js?_=1571036246321')
-        .then((result) => {
-            res.send(result.data);
-        })
-});
-
-app.use(router);
+// router.get('/warm', (req, res) => {
+//     axios.get('https://i.pinimg.com/assets/js/warm.js?_=1571036246321')
+//         .then((result) => {
+//             res.send(result.data);
+//         })
+// });
+//
+// app.use(router);
 
 // css
 const CSSRouter = express.Router();
