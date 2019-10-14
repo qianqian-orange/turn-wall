@@ -11,6 +11,7 @@ router.get('/index', (req, res) => {
         });
 });
 
+// js
 router.get('/warm', (req, res) => {
     axios.get('https://i.pinimg.com/assets/js/warm.js?_=1571036246321')
         .then((result) => {
@@ -25,8 +26,23 @@ router.get('/runtime', (req, res) => {
         })
 });
 
+router.get('/article', (req, res) => {
+    axios.get('https://s.pinimg.com/webapp/js/pjs-ArticlePageDesktop~AuthHomePageDesktop~BusinessAccountConvertPageDesktop~BusinessAccountCreatePageDe~9a2b67e5-0eac34d47f72de853d49.js')
+        .then((result) => {
+            res.send(result.data);
+        });
+});
+
+// css
 router.get('/common', (req, res) => {
     axios.get('https://s.pinimg.com/webapp/style/common_desktop-3b101ffc8dbebcdaace1.css')
+        .then((result) => {
+            res.send(result.data);
+        })
+});
+
+router.get('/gestalt', (req, res) => {
+    axios.get('https://s.pinimg.com/webapp/style/gestalt-1eb6cb5ea6b63c92bf18.css')
         .then((result) => {
             res.send(result.data);
         })
