@@ -4,11 +4,18 @@ const axios = require('axios');
 const app = express();
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/index', (req, res) => {
     axios.get('http://www.pinterest.com/')
         .then((result) => {
             res.send(result.data);
         });
+});
+
+router.get('/warm', (req, res) => {
+    axios.get('https://i.pinimg.com/assets/js/warm.js?_=1571036246321')
+        .then((result) => {
+            res.send(result.data);
+        })
 });
 
 app.use(router);
