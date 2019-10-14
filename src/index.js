@@ -25,6 +25,13 @@ router.get('/runtime', (req, res) => {
         })
 });
 
+router.get('/common', (req, res) => {
+    axios.get('https://s.pinimg.com/webapp/style/common_desktop-3b101ffc8dbebcdaace1.css')
+        .then((result) => {
+            res.send(result.data);
+        })
+});
+
 app.use(router);
 
 app.listen(3001, () => {
