@@ -10,6 +10,89 @@
     <link rel="stylesheet" href="/style/common_desktop-3b101ffc8dbebcdaace1.css"/>
     <link rel="stylesheet" href="/style/gestalt-1eb6cb5ea6b63c92bf18.css"/>
 
+    <script>(function(){function g(a,b){d||(d=b,c=a,h=new Date,k(removeEventListener),l())}function l(){0<=c&&c<h-m&&(e.forEach(function(a){a(c,d)}),e=[])}function n(a,b){function c(){g(a,b);e()}function d(){e()}function e(){removeEventListener("pointerup",c,f);removeEventListener("pointercancel",d,f)}addEventListener("pointerup",c,f);addEventListener("pointercancel",d,f)}function p(a){if(a.cancelable){var b=(1E12<a.timeStamp?new Date:performance.now())-a.timeStamp;"pointerdown"==a.type?n(b,a):g(b,a)}}function k(a){["click", "mousedown","keydown","touchstart","pointerdown"].forEach(function(b){a(b,p,f)})}var d,c,h,e=[],f={passive:!0,capture:!0},m=new Date;k(addEventListener);self.perfMetrics=self.perfMetrics||{};self.perfMetrics.onFirstInputDelay=function(a){e.push(a);l()}})();
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "url": "https://www.pinterest.com/",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.pinterest.com/search/pins/?q={searchbox_target}&referrer=sitelinks_searchbox",
+                "query-input": "required name=searchbox_target"
+            }
+        }
+    </script>
+
+    <script>var Pc = {"IS_TEST_MODE": null, "authenticationOrigin": "https://www.pinterest.com", "trfExperiments": {"active": {}}, "experiments": {"active": {}, "_none": true, "triggerable": {}}, "DEBUG": false, "FB_KEY": "274266067164", "siteConst": {"PIN_MARGIN": 14, "MAX_COLUMNS": 10, "MIN_COLUMNS": 3, "PRESENTER_BUTTON_MODULE_NAME": "DropdownButton", "PIN_WIDTH": 236}, "expns": {}, "adsAPIDomain": "https://api.pinterest.com", "copytune_experiments": {"translations": {"View --- Text on a pin leading to a close up view. This is for users who don't have an account on Pinterest.": "Open", "Sign up with email --- the description of sign up with email button on sign up modal": "Continue with email", "Access our best ideas with a free account --- Value prop on desktop signup modal": "Unlimited free access to the world's best ideas", "Email or phone number": "Email or phone number"}, "triggerable": {"Email or phone number": "copytune_web_unauth_login_form_email_field_placeholder_text"}}, "trustedHostnameEnding": "pinterest.com", "canonicalMainDomain": "www.pinterest.com", "upwtActionName": null};window.P = window.P || {};var submittedErrorReports = [];
+    window.addEventListener('error', function(errorEvent) {
+        function getCookie(cookie) {
+            var value = '; ' + document.cookie;
+            var parts = value.split('; ' + cookie + '=');
+            if (parts.length == 2) {
+                return parts.pop().split(';').shift();
+            } else {
+                return '';
+            }
+        }
+
+        function serializeParam(data) {
+            return Object.keys(data).map(function(key) {
+                return key + '=' + encodeURIComponent(data[key]);
+            }).join('&');
+        }
+
+        function formatError(event) {
+            var error = event.error || {};
+            return {
+                name: error.name,
+                message: error.message || event.message,
+                stack: error.stack,
+                filename: event.filename,
+                line: event.lineno,
+                column: event.colno,
+            };
+        }
+
+        var reportData;
+
+        try {
+            reportData = JSON.stringify({ errorObj: formatError(errorEvent) });
+        } catch (e) {
+            reportData = JSON.stringify({
+                errorObj: { message: e.message },
+            });
+        }
+
+        var reportBody = serializeParam({
+            report_context: JSON.stringify({
+                current_url: window.location.href,
+                client_version: '90f7403',
+            }),
+            report_data: reportData,
+        });
+
+        var encodedReportBody = window.btoa(reportBody);
+
+        if (window.submittedErrorReports.indexOf(encodedReportBody) === -1) {
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('post', '/_/_/report/error/', true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
+            xhr.send(reportBody);
+
+            window.submittedErrorReports.push(encodedReportBody);
+        }
+
+        if (window.submittedErrorReports.length > 100) {
+            window.submittedErrorReports.shift();
+        }
+    });
+    </script>
+
     <script src="/js/pjs-ArticlePageDesktop~AuthHomePageDesktop~BusinessAccountConvertPageDesktop~BusinessAccountCreatePageDe~9a2b67e5-0eac34d47f72de853d49.js"></script>
 
     <script src="/js/pjs-BusinessAccountCreatePageDesktop~BusinessAccountLoginPageDesktop~FullPageSignup~LoginPageDesktop~Log~cebb6848-1bcc71a1120018cf380b.js"></script>
