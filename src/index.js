@@ -39,6 +39,7 @@ app.use('/style', CSSRouter);
 const JSRouter = express.Router();
 
 JSRouter.get('*', (req, res) => {
+    console.log(req.url);
     axios.get(`https://s.pinimg.com/webapp/js${req.url}`)
         .then((result) => {
             res.setHeader('Content-Type', 'application/x-javascript');
