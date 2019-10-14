@@ -39,14 +39,15 @@ app.use('/style', CSSRouter);
 const JSRouter = express.Router();
 
 JSRouter.get('*', (req, res) => {
-    console.log(req.url);
-    axios.get(`https://s.pinimg.com/webapp/js${req.url}`)
-        .then((result) => {
-            res.setHeader('Content-Type', 'application/x-javascript');
-            res.send(result.data);
-        }, (e) => {
-            console.log('error');
-        });
+    if (req.url.lastIndexOf('.map') === -1) {
+        axios.get(`https://s.pinimg.com/webapp/js${req.url}`)
+            .then((result) => {
+                res.setHeader('Content-Type', 'application/x-javascript');
+                res.send(result.data);
+            });
+    } else {
+        res.send();
+    }
 });
 
 app.use('/js', JSRouter)
