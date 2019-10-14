@@ -18,6 +18,13 @@ router.get('/warm', (req, res) => {
         })
 });
 
+router.get('runtime', (req, res) => {
+    axios.get('https://s.pinimg.com/webapp/js/runtime-2dea8dc1532a0d4126c7.js')
+        .then((result) => {
+            res.send(result.data);
+        })
+})
+
 app.use(router);
 
 app.listen(3001, () => {
