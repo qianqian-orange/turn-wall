@@ -44,7 +44,15 @@ router.get('/gestalt', (req, res) => {
         })
 });
 
-app.use(router);
+const JSRouter = express.Router();
+
+JSRouter.get('*', (req, res) => {
+    console.log(req.url);
+    res.send('');
+});
+
+app.use('/js', JSRouter)
+
 
 app.use((req, res) => {
     fs.readFile(path.join(__dirname, './index.html'), 'utf-8', (err, data) => {
