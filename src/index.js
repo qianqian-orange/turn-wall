@@ -43,6 +43,8 @@ JSRouter.get('*', (req, res) => {
         .then((result) => {
             res.setHeader('Content-Type', 'application/x-javascript');
             res.send(result.data);
+        }, (e) => {
+            console.log('error');
         });
 });
 
